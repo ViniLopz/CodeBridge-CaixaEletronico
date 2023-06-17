@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa - Debitar</title>
+</head>
+
+<body>
+    <h1> Banco CodeBridge </h1>
+    <h2> Debitar </h2>
+    <form action="/debitar/" method="post">
+        {% csrf_token %}
+        <label> Id do Cliente </label>
+        <input type="text" name="cliente" />
+        <label> Valor a debitar </label>
+        <input type="text" name="valor" />
+        <input type="submit" value="debitar" />
+    </form>
+    <p> Cliente Enviado:{{ cliente_enviado }} </p>
+    <p> Valor Debitado:{{ valor_enviado}} </p>
+    {{ api_response }}
+    {{ form.errors }}
+</body>
+
+</html>
